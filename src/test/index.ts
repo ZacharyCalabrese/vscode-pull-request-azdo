@@ -43,7 +43,7 @@ async function runAllExtensionTests(testsRoot: string): Promise<number> {
 
 	const mocha = new Mocha({
 		ui: 'bdd',
-		useColors: true,
+		color: true,
 		timeout: 600000,
 	});
 	mocha.addFile(path.resolve(testsRoot, 'globalHooks.js'));

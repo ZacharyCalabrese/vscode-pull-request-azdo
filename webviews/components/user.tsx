@@ -8,11 +8,12 @@ import { Icon } from './icon';
 
 export const Avatar = ({ url, avatarUrl }: { url: string; avatarUrl: string }) => (
 	<a className="avatar-link" href={url}>
-		{avatarUrl ? (
+		<Icon className="avatar-icon" src={require('../../resources/icons/dark/azdo.svg')} />
+		{/* {avatarUrl ? (
 			<img className="avatar" src={avatarUrl} alt="" />
 		) : (
 			<Icon className="avatar-icon" src={require('../../resources/icons/dark/azdo.svg')} />
-		)}
+		)} */}
 	</a>
 );
 

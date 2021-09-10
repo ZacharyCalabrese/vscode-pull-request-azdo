@@ -126,7 +126,7 @@ export class PullRequestViewProvider extends WebviewBase implements vscode.Webvi
 						author: {
 							login: pullRequest.item.createdBy!.uniqueName!,
 							name: pullRequest.item.createdBy?.displayName,
-							avatarUrl: pullRequest.item.createdBy?.imageUrl,
+							avatarUrl: pullRequest.item.createdBy?._links['avatar']['href'],
 							url: pullRequest.item.createdBy?.url,
 						},
 						state: pullRequest.state,

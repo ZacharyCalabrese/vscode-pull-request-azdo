@@ -192,9 +192,10 @@ export class GHPRComment implements vscode.Comment {
 		this.commentId = comment.id!.toString();
 		this.body = new vscode.MarkdownString(comment.content);
 		this.body.isTrusted = true;
+
 		this.author = {
 			name: comment.author!.displayName!,
-			iconPath: comment.author && comment.author.imageUrl ? vscode.Uri.parse(comment.author.imageUrl) : undefined,
+			iconPath: comment.author && comment.author._links['avatar']['href'] ? vscode.Uri.parse(comment.author._links['avatar']['href']) : undefined,
 		};
 
 		this.parentCommentId = comment.parentCommentId;

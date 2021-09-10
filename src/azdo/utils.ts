@@ -48,7 +48,7 @@ export function convertRESTUserToAccount(user: IdentityRef): IAccount {
 		email: user.uniqueName,
 		url: user.url,
 		id: user.id,
-		avatarUrl: user.imageUrl,
+		avatarUrl: user._links['avatar']['href'],
 	};
 }
 

@@ -27,7 +27,7 @@ export class RepositoryChangesNode extends DescriptionNode implements vscode.Tre
 		private _comments: GitPullRequestCommentThread[],
 		private _localFileChanges: (GitFileChangeNode | RemoteFileChangeNode)[],
 	) {
-		super(parent, _pullRequest.item.title ?? '', _pullRequest.item.createdBy!.imageUrl!, _pullRequest);
+		super(parent, _pullRequest.item.title ?? '', _pullRequest.item.createdBy!._links['avatar']['href']!, _pullRequest);
 		this.label = this._pullRequest.item.title ?? '';
 
 		this._disposables.push(

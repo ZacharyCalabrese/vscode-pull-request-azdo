@@ -343,8 +343,8 @@ export class PRNode extends TreeNode implements vscode.CommentingRangeProvider {
 			collapsibleState: 1,
 			contextValue:
 				'pullrequest' + (this._isLocal ? ':local' : '') + (currentBranchIsForThisPR ? ':active' : ':nonactive'),
-			iconPath: this.pullRequestModel.item.createdBy?.imageUrl
-				? this.pullRequestModel.item.createdBy?.imageUrl
+			iconPath: this.pullRequestModel.item.createdBy?._links['avatar']['href']
+				? this.pullRequestModel.item.createdBy?._links['avatar']['href']
 				: new vscode.ThemeIcon('github'),
 		};
 	}
