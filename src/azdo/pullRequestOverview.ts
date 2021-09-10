@@ -227,7 +227,7 @@ export class PullRequestOverviewPanel extends WebviewBase {
 					author: {
 						id: pullRequest.item.createdBy?.id,
 						name: pullRequest.item.createdBy?.displayName,
-						avatarUrl: pullRequest.item.createdBy?._links['avatar']['href'],
+						avatarUrl: undefined,//pullRequest.item.createdBy?._links['avatar']['href'],
 						url: pullRequest.item.createdBy?.url,
 						email: pullRequest.item.createdBy?.uniqueName,
 					},

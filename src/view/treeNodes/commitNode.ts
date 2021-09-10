@@ -30,16 +30,7 @@ export class CommitNode extends TreeNode implements vscode.TreeItem {
 		this.label = commit.comment ?? '';
 		this.sha = commit.commitId!;
 		this.collapsibleState = vscode.TreeItemCollapsibleState.Collapsed;
-		let userIconUri: vscode.Uri | undefined;
-		try {
-			if (commit.author && commit.author.imageUrl) {
-				userIconUri = vscode.Uri.parse(`${commit.author.imageUrl}&s=${64}`);
-			}
-		} catch (_) {
-			// no-op
-		}
-
-		this.iconPath = userIconUri;
+		this.iconPath = undefined;
 		this.contextValue = 'commit';
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		this.comments;

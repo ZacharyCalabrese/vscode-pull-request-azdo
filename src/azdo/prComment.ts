@@ -107,7 +107,7 @@ export class TemporaryComment implements vscode.Comment {
 		this.mode = vscode.CommentMode.Preview;
 		this.author = {
 			name: currentUser.name!,
-			iconPath: currentUser.avatarUrl ? vscode.Uri.parse(`${currentUser.avatarUrl}&s=64`) : undefined,
+			iconPath: undefined,
 		};
 		this.label = isDraft ? 'Pending' : undefined;
 		this.contextValue = 'canEdit,canDelete';
@@ -195,7 +195,7 @@ export class GHPRComment implements vscode.Comment {
 
 		this.author = {
 			name: comment.author!.displayName!,
-			iconPath: comment.author && comment.author._links['avatar']['href'] ? vscode.Uri.parse(comment.author._links['avatar']['href']) : undefined,
+			iconPath: undefined,
 		};
 
 		this.parentCommentId = comment.parentCommentId;
