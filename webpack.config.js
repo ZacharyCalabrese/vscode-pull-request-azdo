@@ -136,6 +136,7 @@ async function getWebviewConfig(mode, env, entry) {
 			extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.svg'],
 			fallback: {
 				path: require.resolve('path-browserify'),
+				os: require.resolve("os-browserify/browser")
 			},
 		},
 		plugins: plugins,
@@ -276,6 +277,7 @@ async function getExtensionConfig(target, mode, env) {
 								'dist-web',
 								'index.js',
 							),
+							'os': 'os-browserify/browser',
 							'node-fetch': 'cross-fetch',
 							'vscode-extension-telemetry': path.resolve(
 								__dirname,
@@ -304,6 +306,7 @@ async function getExtensionConfig(target, mode, env) {
 					? {
 							path: require.resolve('path-browserify'),
 							url: false,
+							'os': require.resolve("os-browserify/browser"),
 							// stream: require.resolve("stream-browserify"),
 							// zlib: require.resolve("browserify-zlib"),
 							// crypto: require.resolve("crypto-browserify"),
